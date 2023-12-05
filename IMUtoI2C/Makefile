@@ -13,7 +13,7 @@ SRC_FILES = $(notdir $(basename $(wildcard $(SRC_DIR)/*.c)))
 OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(SRC_FILES)))
 
 # Name of the executable
-TARGET = $(BIN_DIR)/IMUtoOrangePi
+TARGET = $(BIN_DIR)/IMUtoI2C
 
 all: clean $(TARGET) run
 
@@ -28,7 +28,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 compile: clean $(TARGET)
 
 run:
-	./bin/IMUtoOrangePi
+	./bin/IMUtoI2C
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)
 
